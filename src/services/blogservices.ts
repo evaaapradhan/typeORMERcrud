@@ -8,8 +8,8 @@ export const findblog = () =>{
     return Promise.resolve(blogtable);
   };
 
-  export const blogpost = (blog)=>{
-    AppDataSource.manager.insert(Blog, blog);
+  export const blogpost = async (blog)=>{
+   await AppDataSource.manager.insert(Blog, blog);
     return Promise.resolve(findblog());
   }
 

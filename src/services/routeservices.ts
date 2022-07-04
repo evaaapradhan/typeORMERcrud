@@ -16,9 +16,11 @@ export const findAll = () => {
   };
 
 //POST
-export const upost = (item: User) => {
-    // const usertable = AppDataSource.manager.save(Use); //when using save have to delcare 
- AppDataSource.manager.insert(User,item)  //--> existing entity , new data
+export const upost = async(item:User) => {
+  // const usern = AppDataSource.manager.create(data)
+  //  await AppDataSource.manager.save(User); //when using save have to declare 
+  await AppDataSource.manager.insert(User,item) 
+   //--> existing entity , new data
   return Promise.resolve(findAll());
   };
  

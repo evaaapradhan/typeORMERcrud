@@ -21,6 +21,13 @@ BlogRouter.post("/blogpost", async(req:Request, res:Respose)=>{
     }
 })
 
+// {
+//     "id": 1,
+//     "category": "Tech" ,
+//     "title": "software engineering",
+//     "wordcount": 200,
+//     "user": 2
+// }
 BlogRouter.delete("/delblog/:id", async(req:Request, res:Respose)=>{
     try{let deleteid:number = Number(req.params.id)
     const todelete = await delblog (deleteid)

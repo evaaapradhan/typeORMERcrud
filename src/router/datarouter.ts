@@ -35,12 +35,19 @@ DataRouter.post("/post", async(req:Request, res:Respose)=>{
     // }
     try{
         const result = await upost(req.body);
-        res.status(200).json(result)
+        res.status(200).json({message:"new data posted", data:result})
     } catch (error){
         //logger
         res.status(404).json('error');
     }
 })
+//  {
+//     "id": 1,
+//     "firstName": "nona" ,
+//     "lastName": "shrestha",
+//     "age": 16
+// }
+
 
 //DELETE
 DataRouter.delete('/data/:id', async(req:Request, res:Respose)=>
