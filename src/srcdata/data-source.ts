@@ -3,6 +3,7 @@ import { DataSource } from "typeorm";
 import { User } from "../entity/User";
 import { Blog } from "../entity/Blog";
 import * as dotenv from "dotenv";
+import { Pictures } from "../entity/pictures";
 dotenv.config();
 const PW = process.env.password;
 const name = process.env.user;
@@ -16,7 +17,7 @@ export const AppDataSource = new DataSource({
   database: "test",
   synchronize: true,
   logging: false,
-  entities: [User, Blog],
+  entities: [User, Blog, Pictures],
   migrations: [],
   subscribers: [],
 });

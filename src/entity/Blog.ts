@@ -15,8 +15,6 @@ export class Blog{
     @Column()
     wordcount: Number
     
-    // @ManyToOne(()=> User,(users)=> users.blogss)
-    // userss: User
     @OneToOne(()=> User,
     {
         eager:true

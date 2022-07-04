@@ -1,7 +1,7 @@
 import { Request, Respose, Router } from "express";
 import { deletedata, findAll, findByID, update, upost } from "../services/routeservices";
 
-import { Userdata } from "../contracts/Userdata";
+
 
 
 export const DataRouter: Router = Router();
