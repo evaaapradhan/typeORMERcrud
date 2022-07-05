@@ -14,3 +14,19 @@ export const postpic = async(item: Pictures)=>{
      await repositorypic.save(item)
      return Promise.resolve(findpic());
 }
+
+export const deletepic = async(deleteid)=>{
+    const deletepic = await repositorypic.findOneByOrFail({
+        id:deleteid,
+    })
+    await repositorypic.remove(deletepic)
+    return Promise.resolve(findpic())
+}
+
+export const updatepic = async(updateid, picinfo:Pictures) => {
+   const updatepic = await repositorypic.findOneByOrFail({
+        id:updateid,
+    })
+    await repositorypic.update(updateid, picinfo)
+    return Promise.resolve(findpic())
+}
